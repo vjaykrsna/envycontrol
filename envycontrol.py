@@ -470,6 +470,7 @@ def get_amd_igpu_name():
     except subprocess.CalledProcessError:
         logging.warning(
             "Failed to run the 'xrandr' command.")
+        return None
 
     pattern = re.compile(r'(name:).*(ATI*|AMD*|AMD\/ATI)*')
 
